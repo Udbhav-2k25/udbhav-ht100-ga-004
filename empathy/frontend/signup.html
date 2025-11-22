@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Account • Empathy Engine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="login-bg">
+
+<div class="login-container">
+    <div class="login-card">
+        <h1 class="login-title">Create Account</h1>
+
+        <input id="su_user" class="login-input" type="text" placeholder="Username">
+        <p id="su_user_err" class="err"></p>
+
+        <input id="su_email" class="login-input" type="email" placeholder="Email ID">
+        <p id="su_email_err" class="err"></p>
+
+        <input id="su_pass" class="login-input" type="password" placeholder="Password">
+        <p id="su_pass_err" class="err"></p>
+
+        <input id="su_cpass" class="login-input" type="password" placeholder="Confirm Password">
+        <p id="su_cpass_err" class="err"></p>
+
+        <button id="signupBtn" class="btn neon login-btn">Create Account</button>
+
+        <p id="signupStatus" class="login-status"></p>
+
+        <p style="color:#8cff6b; margin-top:12px; cursor:pointer"
+           onclick="window.location.href='gateway.html'">
+           ← Back to Login
+        </p>
+    </div>
+</div>
+
+<script src="signup.js"></script>
+</body>
+</html>
