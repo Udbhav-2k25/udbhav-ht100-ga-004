@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Empathy Engine — Chat</title>
+
+  
+  <link rel="stylesheet" href="styles.css" />
+  
+  <link rel="stylesheet" href="chat.css" />
+</head>
+<body>
+  <div class="chat-app">
+
+   
+    <header class="topbar">
+      <button id="menuBtn" class="icon-btn hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="topbar-center">
+        <div class="brand-mini">VoiceWithin</div>
+      </div>
+
+      <button id="profileBtn" class="icon-btn profile" aria-label="Profile">
+        
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5z" fill="#d7eef6"/>
+          <path d="M3 20c0-3.866 3.582-7 9-7s9 3.134 9 7v1H3v-1z" fill="#d7eef6"/>
+        </svg>
+      </button>
+    </header>
+
+    
+    <main class="chat-area">
+      <div id="messages" class="messages">
+        
+        <div class="sys msg">Welcome back — I’m here. Type or use the mic.</div>
+      </div>
+    </main>
+
+    
+    <footer class="input-bar">
+      <div class="input-wrapper">
+        <input id="chatInput" type="text" placeholder="Type a message..." autocomplete="off" />
+        <button id="sendBtn" class="btn small send">Send</button>
+      </div>
+
+      <button id="micBtn" class="mic-btn small" title="Record / Stop" aria-pressed="false">
+        <span class="mic-icon"></span>
+      </button>
+    </footer>
+
+    
+    <div style="position:fixed; left:10px; bottom:10px; z-index:50; color:rgba(215,238,246,0.6); font-size:12px;">
+      <a href="file:///mnt/data/Sai Akshaya Dantala_udb.pdf" style="color:inherit; text-decoration:underline;">Uploaded file</a>
+    </div>
+  </div>
+
+  <script src="chat.js"></script>
+</body>
+</html>

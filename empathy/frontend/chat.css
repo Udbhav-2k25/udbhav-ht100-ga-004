@@ -1,0 +1,213 @@
+
+.chat-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.icon-btn:focus { outline: 2px solid rgba(0,246,255,0.12); }
+
+
+.hamburger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon1), var(--neon2));
+  margin: 3px 0;
+  border-radius: 2px;
+  display:block;
+}
+
+
+.icon-btn.profile {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,246,255,0.06), rgba(124,77,255,0.04));
+  box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+}
+
+
+.topbar-center { flex: 1; text-align: center; color:var(--muted); font-size:14px; }
+.brand-mini { font-weight:600; color:transparent; background:linear-gradient(90deg,var(--neon1),var(--neon2));
+    background-clip: text;
+    -webkit-background-clip:text;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0,255,255,0.3);
+    }
+
+
+.chat-area {
+  flex: 1;
+  display:flex;
+  flex-direction:column;
+  padding: 20px;
+  overflow: hidden;
+  background: radial-gradient(circle at 10% 10%, rgba(0,255,255,0.01), transparent 10%);
+}
+
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+
+.msg {
+  max-width: 78%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  color: #d7eef6;
+  font-size: 14px;
+}
+
+.msg.user {
+  align-self: flex-end;
+  background: linear-gradient(90deg,#0b2bff,#7c4dff);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(11,43,255,0.08);
+}
+
+.msg.assistant {
+  align-self: flex-start;
+  background: rgba(255,255,255,0.02);
+  color: #d7eef6;
+}
+
+
+.msg.sys {
+  align-self: center;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
+.input-bar {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding: 12px 18px;
+  border-top: 1px solid rgba(255,255,255,0.02);
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.03));
+}
+
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   
+  gap: 10px;
+  width: 85%;
+  max-width: 1100px;
+
+  background: rgba(255,255,255,0.05);
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.06);
+
+  margin: 0 auto;
+}
+
+
+#chatInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: #e8fbff;
+}
+
+
+.btn.small.send {
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 999px;
+
+  width: 62px;        
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.mic-btn.small {
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  margin-right: 6px;
+  box-shadow: 0 8px 28px rgba(0,255,255,0.04);
+  background: linear-gradient(145deg, #00f6ff, #007c84);
+}
+
+.mic-btn.small .mic-icon {
+  width:16px;
+  height:24px;
+  display:block;
+  mask: url('https://api.iconify.design/mdi/microphone.svg') center/contain no-repeat;
+  background: #fff;
+}
+
+
+.mic-btn.small.recording {
+  background: linear-gradient(145deg, #ff0066, #ff3366) !important;
+  animation: glowPulse 1s infinite alternate;
+}
+
+
+@media (max-width:800px) {
+  .input-wrapper { width: 86%; }
+  .topbar { padding: 8px 12px; }
+  .icon-btn { width:40px; height:40px; }
+}
+#chatInput {
+  flex: none;         
+  width: 45%;          
+  padding: 12px 14px;
+  font-size: 18px;
+  color: #e8fbff;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.hamburger {
+  display: flex;
+  flex-direction: column;   
+  justify-content: center;
+  align-items: center;
+  gap: 4px;                  
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome • Empathy Engine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-bg">
+
+<div class="login-container">
+
+    
+    <div id="choiceBox" class="login-card">
+        <h1 class="login-title">Empathy Engine</h1>
+        <p class="login-sub">Welcome</p>
+
+        <button class="btn neon login-btn" id="showLoginBtn">Login</button>
+        <button class="btn bright login-btn" onclick="window.location.href='signup.html'">Create Account</button>
+    </div>
+
+    
+    <div id="loginBox" class="login-card" style="display:none;">
+        <h1 class="login-title">Login</h1>
+
+        <input id="login_user" class="login-input" type="text" placeholder="Username">
+        <p id="log_user_err" class="err"></p>
+
+        <input id="login_pass" class="login-input" type="password" placeholder="Password">
+        <p id="log_pass_err" class="err"></p>
+
+        <button id="loginBtn" class="btn neon login-btn">Login</button>
+        <p id="loginStatus" class="login-status"></p>
+
+        <p style="color:#8cff6b; margin-top:10px; cursor:pointer"
+           onclick="window.location.href='signup.html'">Create new account</p>
+
+        <p style="color:#93a3b0; cursor:pointer; margin-top:6px;" id="backBtn">⬅ Back</p>
+    </div>
+
+</div>
+
+<script src="gateway.js"></script>
+</body>
+</html>
