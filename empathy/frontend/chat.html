@@ -5,15 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Empathy Engine — Chat</title>
 
-  
   <link rel="stylesheet" href="styles.css" />
-  
   <link rel="stylesheet" href="chat.css" />
 </head>
 <body>
   <div class="chat-app">
 
-   
+    <!-- Top bar -->
     <header class="topbar">
       <button id="menuBtn" class="icon-btn hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -23,24 +21,41 @@
         <div class="brand-mini">VoiceWithin</div>
       </div>
 
-      <button id="profileBtn" class="icon-btn profile" aria-label="Profile">
-        
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5z" fill="#d7eef6"/>
-          <path d="M3 20c0-3.866 3.582-7 9-7s9 3.134 9 7v1H3v-1z" fill="#d7eef6"/>
-        </svg>
-      </button>
+      <button id="profileBtn" class="icon-btn profile" aria-label="Profile"></button>
+
+      <!-- Profile Dropdown -->
+      <div class="profile-container" id="profileContainer">
+        <span class="profile-icon">👤</span>
+        <div class="dropdown" id="profileDropdown">
+          <a href="#" id="profileOption">Profile</a>
+          <a href="#" id="logoutOption">Log Out</a>
+        </div>
+      </div>
     </header>
 
-    
+    <!-- Sidebar for Chat History -->
+    <div class="chat-sidebar" id="chatSidebar">
+      <div class="new-chat-container">
+        <button id="newChatBtn" class="btn small">+ New Chat</button>
+      </div>
+      <h3>Chat History</h3>
+      <div id="chatList" class="chat-list"></div>
+
+      <!-- Footer buttons -->
+      <div class="sidebar-footer">
+        <button id="reportBtn" class="btn small sidebar-btn">Report</button>
+        <button id="feedbackBtn" class="btn small sidebar-btn">Feedback</button>
+      </div>
+    </div>
+
+    <!-- Chat area -->
     <main class="chat-area">
       <div id="messages" class="messages">
-        
         <div class="sys msg">Welcome back — I’m here. Type or use the mic.</div>
       </div>
     </main>
 
-    
+    <!-- Input bar -->
     <footer class="input-bar">
       <div class="input-wrapper">
         <input id="chatInput" type="text" placeholder="Type a message..." autocomplete="off" />
@@ -52,10 +67,56 @@
       </button>
     </footer>
 
-    
+    <!-- Uploaded file link -->
     <div style="position:fixed; left:10px; bottom:10px; z-index:50; color:rgba(215,238,246,0.6); font-size:12px;">
       <a href="file:///mnt/data/Sai Akshaya Dantala_udb.pdf" style="color:inherit; text-decoration:underline;">Uploaded file</a>
     </div>
+
+    <!-- Profile Modal -->
+    <div class="modal" id="profileModal">
+      <div class="modal-content">
+        <h3>Update Profile</h3>
+        <form id="profileForm">
+          <label>Name:</label>
+          <input type="text" id="nameInput" placeholder="Enter your name">
+
+          <label>Email:</label>
+          <input type="email" id="emailInput" readonly>
+
+          <label>Age:</label>
+          <input type="number" id="ageInput" placeholder="Enter your age">
+
+          <label>Gender:</label>
+          <select id="genderInput">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div class="modal" id="reportModal">
+      <div class="modal-content">
+        <h3>Report an Issue</h3>
+        <textarea id="reportInput" placeholder="Describe the issue..." rows="5"></textarea>
+        <button id="submitReportBtn">Submit Report</button>
+      </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div class="modal" id="feedbackModal">
+      <div class="modal-content">
+        <h3>Give Feedback</h3>
+        <textarea id="feedbackInput" placeholder="Your feedback..." rows="5"></textarea>
+        <button id="submitFeedbackBtn">Submit Feedback</button>
+      </div>
+    </div>
+
   </div>
 
   <script src="chat.js"></script>

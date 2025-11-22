@@ -12,6 +12,11 @@ const errPass = document.getElementById("su_pass_err");
 const errCPass = document.getElementById("su_cpass_err");
 
 signupBtn.onclick = () => {
+    
+function isValidEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  
+    return re.test(email);
+}
 
     
     errUser.textContent = "";
@@ -29,10 +34,13 @@ signupBtn.onclick = () => {
         valid = false;
     }
 
-    if (suEmail.value.trim() === "") {
-        errEmail.textContent = "Email is required";
-        valid = false;
-    }
+   if (suEmail.value.trim() === "") {
+    errEmail.textContent = "Email is required";
+    valid = false;
+} else if (!isValidEmail(suEmail.value.trim())) {
+    errEmail.textContent = "Enter a valid email address";
+    valid = false;
+}
 
     if (suPass.value.trim() === "") {
         errPass.textContent = "Password is required";
